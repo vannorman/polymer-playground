@@ -52,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Atom.cs" />
+     <Compile Include="Assets\EnableOnStartup.cs" />
+     <Compile Include="Assets\EnableOnStartupManager.cs" />
      <Compile Include="Assets\MaterialRef.cs" />
      <Compile Include="Assets\Membrane.cs" />
      <Compile Include="Assets\MoleculeClickDetector.cs" />
@@ -166,7 +168,7 @@
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
- <HintPath>/Users/zannorman/Documents/_UNITY/polymer playground/Assets/Unity Utilities/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
+ <HintPath>/Users/zannorman/Work/Foresight Institute/polymer playground/Assets/Unity Utilities/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>/Users/zannorman/Library/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>

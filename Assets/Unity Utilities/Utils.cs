@@ -131,16 +131,26 @@ public static class Utils2 {
 		return ret;
 	}
 
-	public static Vector3[] Spiral2 (int count, float twists, float spacing){
+	public static Vector3[] Spiral2 (int count, float twists, float spacing, float radius, bool reverse=false){
 //		int count = 100;
 //		float twists = 2.5f;
 		float arcLength = 360 * twists / count;
-		float radius = 5;
+//		float radius = 5;
 		Vector3[] ret = new Vector3[count];
-		for (int i=0;i<count;i++){
-			float xPos = Mathf.Sin(Mathf.Deg2Rad*i*arcLength)*(radius); // x and y calculated with "trigonometry"
-			float yPos = Mathf.Cos(Mathf.Deg2Rad*i*arcLength)*(radius);
-			ret[i] = new Vector3(xPos,i*spacing,yPos);
+		if (!reverse) {
+			for (int i = 0; i < count; i++) {
+				float xPos = Mathf.Sin (Mathf.Deg2Rad * i * arcLength) * (radius); // x and y calculated with "trigonometry"
+				float yPos = Mathf.Cos (Mathf.Deg2Rad * i * arcLength) * (radius);
+				ret [i] = new Vector3 (xPos, i * spacing, yPos);
+			}
+		} else {
+//			int j = 0;
+			for (int i = count-1; i > 0; i--) {
+				float xPos = Mathf.Cos (Mathf.Deg2Rad * i * arcLength) * (radius); // x and y calculated with "trigonometry"
+				float yPos = Mathf.Sin (Mathf.Deg2Rad * i * arcLength) * (radius);
+				ret [i] = new Vector3 (xPos, (count-1- i) * spacing, yPos);
+			}
+		
 		}
 		return ret;
 	}
@@ -188,7 +198,7 @@ public static class Utils2 {
 
 	}
 
-	public static Vector3[] BendVectorArray(Vector3[] pts, Vector3 bendDirection, float angle){
+	public static Vector3[] BendVectorArray(Vector3[] pts, Vector3 bendDirection, float angle, float radiusFactor = 1f){
 		Vector3 extents = pts [pts.Length - 1] - pts [0];
 
 		Vector3 bendPivot = extents / 2f + bendDirection * extents.magnitude/2f; // the
@@ -199,7 +209,7 @@ public static class Utils2 {
 //		bendCyl.transform.localScale = Vector3.one * extents.magnitude / 2f;
 
 		float arcLength = angle / pts.Length;
-		float radius = extents.magnitude / 2f;
+		float radius = extents.magnitude / 2f * radiusFactor;
 		Vector3[] ret = new Vector3[pts.Length];
 		for (int i=0;i<pts.Length;i++){
 			// commented Debug.Log ("radius:"+radius);

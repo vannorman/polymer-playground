@@ -81,6 +81,7 @@ public class PolymerTwist : MonoBehaviour {
 
 	void Start(){
 		spiralPiecesParent2 = new GameObject ("par2");
+		spiralPiecesParent1 = new GameObject ("par1");
 	}
 
 //	GameObject s = (GameObject)Instantiate (molToTwist); // GameObject.CreatePrimitive (PrimitiveType.Sphere);
@@ -99,20 +100,33 @@ public class PolymerTwist : MonoBehaviour {
 	public LineRenderer lr;
 	List<GameObject> spiralPieces = new List<GameObject>();
 	List<GameObject> spiralPieces2 = new List<GameObject>();
+	GameObject spiralPiecesParent1;
 	GameObject spiralPiecesParent2;
+	public float spiralOffset = 0.5f;
+	public float radius = 5;
+	public float radiusFactor = 1.01f;
+	public bool reverse = false;
+	public float reverseFactorP = 0.5f;
 	public void Spiral(){
-		float spacing = 2f;
+		float spacing = 1f;
 		float maxTwists = 15;
-		int polymerLength = 150;
+		int polymerLength = 500;
 //		Vector3[] pts = Utils2.Spiral (50,spiral.value * maxTwists, spacing);
-		Vector3[] pts1 = Utils2.Spiral2 (polymerLength,spiral.value * maxTwists,spacing);
-		Vector3[] pts2 = Utils2.Spiral2 (polymerLength,Mathf.Max(0,(spiral.value * maxTwists) - 0.5f),spacing);
+		float spiralOffset1 = reverse ? 0 : spiralOffset; 
+		float spiralOffset2 = reverse ? spiralOffset : 0;
+		float reverseFactor = reverse ? reverseFactorP : 0;
+		Vector3[] pts1 = Utils2.Spiral2 (polymerLength,Mathf.Max(0,(spiral.value * maxTwists) - spiralOffset1 + reverseFactor),spacing,radius, reverse);
 //		Vector3[] pts2 = Utils2.Spiral2 (50,Mathf.Max(0,(spiral.value - 0.5f)) * maxTwists,spacing);
+		Vector3[] pts2 = Utils2.Spiral2 (polymerLength,Mathf.Max(0,(spiral.value * maxTwists) - spiralOffset2 + reverseFactor),spacing,radius,reverse);
 
 		// Bend the pts
-		pts1 = Utils2.BendVectorArray(pts1,Vector3.right,180);
-		pts2 = Utils2.BendVectorArray(pts2,Vector3.right,180);
+		int arc = 120;
+		pts1 = Utils2.BendVectorArray(pts1,Vector3.right,arc);
+		pts2 = Utils2.BendVectorArray(pts2,Vector3.right,arc,radiusFactor);
 
+
+		spiralPiecesParent1.transform.rotation = Quaternion.identity;
+		spiralPiecesParent1.transform.position = Vector3.zero;
 
 		spiralPiecesParent2.transform.rotation = Quaternion.identity;
 		spiralPiecesParent2.transform.position = Vector3.zero;
@@ -130,7 +144,7 @@ public class PolymerTwist : MonoBehaviour {
 			}
 			GameObject s = cachedPolymers [0] [i];
 			
-
+			s.transform.SetParent (spiralPiecesParent1.transform);
 			spiralPieces.Add (s);
 			s.transform.position = pts1 [i];
 			if (i > 0)
@@ -159,5 +173,14 @@ public class PolymerTwist : MonoBehaviour {
 		Spiral ();
 
 
+	}
+
+	public void Update(){
+		if (Input.GetKey(KeyCode.A)){
+			int sign = Input.GetKey (KeyCode.LeftShift) ? -1 : 1;
+			spiral.value += 0.1f * Time.deltaTime * sign;
+//			reverse = !reverse;
+//			TwistSlider ();
+		}
 	}
 }
