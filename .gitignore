@@ -1,0 +1,6 @@
+*.meta
+*.o
+Temp/
+Library/Cache/
+Library/*cache*/
+Library/il2ccp_cache/

@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/PolymerTwist.cs">
+    <Files>
+      <File FileName="Assets/PolymerTwist.cs" Line="9" Column="2" />
+      <File FileName="Assets/Membrane.cs" Line="1" Column="1" />
+      <File FileName="Assets/Unity Utilities/EditorTools.cs" Line="1" Column="1" />
+      <File FileName="Assets/Unity Utilities/Utils.cs" Line="1" Column="1" />
+      <File FileName="Assets/Ring.cs" Line="1" Column="1" />
+      <File FileName="Assets/Unity Utilities/SceneToolHacker.cs" Line="1" Column="1" />
+      <File FileName="Assets/PolymerPlayground.cs" Line="1" Column="1" />
+      <File FileName="Assets/MoleculeConstructor.cs" Line="1" Column="1" />
+      <File FileName="Assets/Prefabs.cs" Line="1" Column="1" />
+      <File FileName="Assets/MoleculeClickDetector.cs" Line="1" Column="1" />
+      <File FileName="Assets/MoleculeClicker.cs" Line="50" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/zannorman/Documents/_UNITY/direct assembly/Assets/PolymerTwist.cs" line="47" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
