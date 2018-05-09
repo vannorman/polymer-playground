@@ -13,5 +13,6 @@ public class Prefabs : MonoBehaviour {
 	}
 	public GameObject sphere;
 	public GameObject molecule1;
+	public GameObject mol3;
 
 }

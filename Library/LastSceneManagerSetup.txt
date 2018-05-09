@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Twist.unity
+- path: Assets/cell exterior.unity
   isLoaded: 1
   isActive: 1
