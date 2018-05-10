@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/cell exterior.unity
+- path: Assets/Scenes/Dynamic Assembler.unity
   isLoaded: 1
   isActive: 1

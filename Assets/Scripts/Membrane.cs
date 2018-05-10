@@ -21,16 +21,13 @@ public class Membrane : MonoBehaviour {
 			DestroyImmediate (t.gameObject);
 		}
 		surface.Clear ();
-		for (int i = 0; i < size; i++) {
-			for (int j = 0; j < size; j++) {			
-				int sign = i % 2 == 0 ? 1 : -1;
-//				int sign = 1;
-				Vector3 p = transform.position + (new Vector3 (i * 0.67f, 0, j+sign * 0.25f))  * scale;
-				GameObject s = (GameObject)Instantiate (spherePrefab, p, Quaternion.identity);
-				s.transform.SetParent (transform);
-				surface.Add (p, s);
-				s.name = i + ", " + j;
-			}
+		foreach (Vector3 p in Utils2.HexGrid (size,scale)) {
+			GameObject s = (GameObject)Instantiate (spherePrefab, transform.position + p, Quaternion.identity);
+			s.transform.SetParent (transform);
+			surface.Add (p, s);
+
+//				s.name = i + ", " + j;
+
 		}
 	}
 	void Start(){

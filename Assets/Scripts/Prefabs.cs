@@ -14,5 +14,11 @@ public class Prefabs : MonoBehaviour {
 	public GameObject sphere;
 	public GameObject molecule1;
 	public GameObject mol3;
+	public GameObject wedgePrefab;
+	public static GameObject wedge {
+		get { 
+			return (GameObject)Instantiate(inst.wedgePrefab);
+		}
+	}
 
 }

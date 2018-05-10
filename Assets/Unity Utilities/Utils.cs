@@ -155,6 +155,20 @@ public static class Utils2 {
 		return ret;
 	}
 
+
+	public static Vector3[] HexGrid(int size, float scale){
+		List<Vector3> ret = new List<Vector3> ();
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				int sign = i % 2 == 0 ? 1 : -1;
+				Vector3 p = (new Vector3 (i * 0.67f, 0, j+sign * 0.25f))  * scale;
+				ret.Add (p);
+			}
+		}
+		return ret.ToArray ();
+
+	}
+
 	public static Vector3[] Spiral(int numPtsPerTwist=50, float twists = 0.5f, float spacing = 1){
 		// we want a straight line if twists are set to 0.5, e.g. radius 0
 		// then as twist changes from 0 to 1, we increase radius from 0 to 1

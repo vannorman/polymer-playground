@@ -201,7 +201,7 @@ public class EditorTools : Editor {
 	[MenuItem("Edit/Editor Tools/Count Vertex")]
 	public static void CountVertex() {
 
-		// commented Debug.Log ("vertex on "+Selection.activeObject.name+": "+Selection.activeGameObject.GetComponent<MeshFilter>().sharedMesh.vertices.Length);
+		Debug.Log ("vertex on "+Selection.activeObject.name+": "+Selection.activeGameObject.GetComponent<MeshFilter>().sharedMesh.vertices.Length);
 
 	}
 
