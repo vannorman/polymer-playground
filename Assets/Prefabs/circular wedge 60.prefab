@@ -328,8 +328,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1936505345147564}
   m_LocalRotation: {x: 0.68535936, y: -0.009083239, z: 0.027037526, w: 0.72764623}
-  m_LocalPosition: {x: -0.594, y: -0.063, z: 0.182}
-  m_LocalScale: {x: 4.6312623, y: 4.631262, z: 4.631262}
+  m_LocalPosition: {x: -0.59227, y: -0.11655, z: 0.18323}
+  m_LocalScale: {x: 5.6964517, y: 5.696451, z: 5.696451}
   m_Children: []
   m_Father: {fileID: 4040035787362260}
   m_RootOrder: 1
@@ -737,7 +737,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 56334fb4c783148679f82233f4245205, type: 2}
+  - {fileID: 2100000, guid: 51def6e983999405987e1373a6d479d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -935,8 +935,8 @@ MonoBehaviour:
   attachProtector: {fileID: 0}
   attacherDestinationFinal: {fileID: 0}
   attacherDestinationInitial: {fileID: 0}
-  attachEnabled: 0
   fixedPosition: 0
+  mode: 0
 --- !u!114 &114197847254834544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -965,8 +965,8 @@ MonoBehaviour:
   attachProtector: {fileID: 0}
   attacherDestinationFinal: {fileID: 0}
   attacherDestinationInitial: {fileID: 0}
-  attachEnabled: 0
   fixedPosition: 0
+  mode: 0
 --- !u!114 &114968921256667740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -983,8 +983,8 @@ MonoBehaviour:
   attachProtector: {fileID: 1936505345147564}
   attacherDestinationFinal: {fileID: 4491811771454784}
   attacherDestinationInitial: {fileID: 4213337992514368}
-  attachEnabled: 0
   fixedPosition: 0
+  mode: 0
 --- !u!135 &135343835149298718
 SphereCollider:
   m_ObjectHideFlags: 1

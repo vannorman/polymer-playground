@@ -80,13 +80,13 @@ public class Wedge : MonoBehaviour {
 	}
 
 	public void SetMode(AttachMode newMode){
-		Debug.Log ("set mode;" + newMode);
+//		Debug.Log ("set mode;" + newMode);
 		mode = newMode;
 	}
 
 	Wedge attachTarget;
 	void InitAttach(Wedge m, Wedge f){
-		Debug.Log ("init attach m:" + m.gameObject.name + ", f:" + f.gameObject.name + ". mode:" + m.mode);
+//		Debug.Log ("init attach m:" + m.gameObject.name + ", f:" + f.gameObject.name + ". mode:" + m.mode);
 		if (m.mode != AttachMode.ReadyToAttach || f.mode != AttachMode.ReadyToReceive) {
 			return;
 		}

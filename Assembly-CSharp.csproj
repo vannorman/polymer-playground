@@ -69,10 +69,13 @@
      <Compile Include="Assets\Scripts\PolymerTwist.cs" />
      <Compile Include="Assets\Scripts\Prefabs.cs" />
      <Compile Include="Assets\Scripts\Ring.cs" />
+     <Compile Include="Assets\Scripts\Shower.cs" />
      <Compile Include="Assets\Scripts\SinPop.cs" />
+     <Compile Include="Assets\Scripts\SurfacePrinter.cs" />
      <Compile Include="Assets\Scripts\TwistController.cs" />
      <Compile Include="Assets\Scripts\Wedge.cs" />
-     <Compile Include="Assets\Shower.cs" />
+     <Compile Include="Assets\Scripts\WedgeFarm.cs" />
+     <Compile Include="Assets\Scripts\WedgeProtector.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\IntegrationCommon.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshCombinerIntegration.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshDeformerIntegration.cs" />
@@ -91,8 +94,6 @@
      <Compile Include="Assets\Unity Utilities\SinHover.cs" />
      <Compile Include="Assets\Unity Utilities\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Unity Utilities\Utils.cs" />
-     <Compile Include="Assets\WedgeFarm.cs" />
-     <Compile Include="Assets\WedgeProtector.cs" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Unity Utilities\SaladLab\Json.Net.Unity3D\link.xml" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-LightedOutlineScroll.shader" />
