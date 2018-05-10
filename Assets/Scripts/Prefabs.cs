@@ -16,6 +16,8 @@ public class Prefabs : MonoBehaviour {
 	public GameObject mol3;
 	public GameObject wedgePrefab;
 	public GameObject nubPrefab;
+	public GameObject atomPrefab;
+	public GameObject atomWithPaddlePrefab;
 
 	public static GameObject wedge {
 		get { 
@@ -28,5 +30,21 @@ public class Prefabs : MonoBehaviour {
 			return (GameObject)Instantiate (inst.nubPrefab);
 		}
 	}
+
+	public static GameObject atom {
+		get { 
+			return (GameObject)Instantiate (inst.atomPrefab);
+		}
+	}
+
+	public static GameObject atomWithPaddle {
+		get { 
+			return (GameObject)Instantiate (inst.atomWithPaddlePrefab);
+		}
+	}
+
+
+
+
 
 }

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Dynamic Assembler.unity
+- path: Assets/Scenes/accelerated channel.unity
   isLoaded: 1
   isActive: 1

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Linq;
 public static class Utils2 {
 
 	public static Quaternion FlattenRotation(Quaternion rot){
@@ -36,6 +36,47 @@ public static class Utils2 {
 			}
 		}
 		return highestY;
+	}
+
+	public static List<List<Vector3>> Tube2(float radius=5, int height=6){
+		List<List<Vector3>> ret = new List<List<Vector3>> ();
+		float degreesToComplete = 360;
+		int count = 10;
+
+		float arcLength = degreesToComplete/ count;
+
+		for (int j=0;j<height;j++){
+			List<Vector3> layer = new List<Vector3> ();
+			for (int i=0;i<count;i++){
+				// commented Debug.Log ("radius:"+radius);
+				float jMod = j % 2 == 0 ? 0 : arcLength * 0.55f;
+				float xPos = Mathf.Sin(Mathf.Deg2Rad*i*arcLength+jMod)*(radius); // x and y calculated with "trigonometry"
+				float yPos = Mathf.Cos(Mathf.Deg2Rad*i*arcLength+jMod)*(radius);
+				layer.Add(new Vector3(xPos,j,yPos));
+			}
+			ret.Add (layer);
+
+		}
+		return ret;
+	}
+	public static Vector3[] Tube(float radius=5, int height=6){
+		List<Vector3> ret = new List<Vector3> ();;
+		float degreesToComplete = 360;
+		int count = 10;
+
+		float arcLength = degreesToComplete/ count;
+
+		for (int j=0;j<height;j++){
+			for (int i=0;i<count;i++){
+				// commented Debug.Log ("radius:"+radius);
+				float jMod = j % 2 == 0 ? 0 : arcLength * 0.55f;
+				float xPos = Mathf.Sin(Mathf.Deg2Rad*i*arcLength+jMod)*(radius); // x and y calculated with "trigonometry"
+				float yPos = Mathf.Cos(Mathf.Deg2Rad*i*arcLength+jMod)*(radius);
+				ret.Add(new Vector3(xPos,j,yPos));
+			}
+			
+		}
+		return ret.ToArray ();
 	}
 
 
@@ -257,6 +298,8 @@ public static class Utils2 {
 		 * // if any Enemy objects exist in the scene, e is now a reference to the closest Enemy to the Player
 		 * */
 
+		// Need linq!!
+
 		Transform closest = null;
 		foreach(Component oo in Component.FindObjectsOfType(typeof(T))){
 			GameObject o =  oo.gameObject;
@@ -269,6 +312,14 @@ public static class Utils2 {
 		return closest;
 	}
 
+	public static Vector3 center(Vector3[] pts){
+		Vector3 center = Vector3.zero;
+		foreach (Vector3 p in pts){
+			center += p;
+		}
+		center /= pts.Length;
+		return center;
+	}
 
 	public static bool IntervalElapsed(float t){
 
@@ -279,6 +330,23 @@ public static class Utils2 {
 		 * 		// This action occurrs every 2 seconds.
 		* }
 	*/
-	return Time.realtimeSinceStartup > t && Mathf.Abs(((Time.realtimeSinceStartup - t) % t)-t)<Time.unscaledDeltaTime;
-}
+		return Time.realtimeSinceStartup > t && Mathf.Abs(((Time.realtimeSinceStartup - t) % t)-t)<Time.unscaledDeltaTime;
+	}
+
+
+/* linq examples */
+
+static void LinqExamples () {
+
+	// flatten an array of objects then convert it to array of the positions
+//	List<List<GameObject>> tubeObjs = new List<List<GameObject>> ();
+//	center.transform.position = Utils2.center(tubeObjs.SelectMany(array => array).Select(o => o.transform.position));
+
+	// Nearest obj
+	 // var nearest = yourArrayOfTransforms.OrderBy(function(t) { return (thingToBeCloseTo.position - t.position).sqrMagnitude; }).First();
+
+	// again
+	// cachedPs = FindObjectsOfType<ParticleSystem>().OrderBy(o => (o.transform.position - this.transform.position).sqrMagnitude).FirstOrDefault();
+
+	}
 }

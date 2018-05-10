@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Paddle.cs" />
+     <Compile Include="Assets\ParticleMover.cs" />
      <Compile Include="Assets\Scripts\Assembler.cs" />
      <Compile Include="Assets\Scripts\Atom.cs" />
      <Compile Include="Assets\Scripts\EnableOnStartup.cs" />
@@ -76,6 +78,7 @@
      <Compile Include="Assets\Scripts\Wedge.cs" />
      <Compile Include="Assets\Scripts\WedgeFarm.cs" />
      <Compile Include="Assets\Scripts\WedgeProtector.cs" />
+     <Compile Include="Assets\Tube.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\IntegrationCommon.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshCombinerIntegration.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshDeformerIntegration.cs" />
