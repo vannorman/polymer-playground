@@ -37,6 +37,26 @@ public class EditorTools : Editor {
 //		}
 //	}
 
+
+	[MenuItem("Molecules/Extend #e")]
+	public static void Extend()
+	{
+		// Save selection
+		// Duplicate it
+		// Select dupe
+		// parent to orig
+		// position at Vector3(-13,769,513)
+		// rotation -52, 0, rand(360)
+		GameObject sel = Selection.activeGameObject;
+		GameObject dupe = (GameObject)Instantiate (sel);
+		dupe.transform.SetParent (sel.transform);
+		dupe.transform.localPosition = new Vector3 (-13, 769, 513);
+		dupe.transform.localRotation = Quaternion.Euler (-52, 0, Random.Range (0, 360));
+		dupe.transform.localScale = Vector3.one;
+		Selection.activeObject = dupe;
+
+	}
+
 	[MenuItem("Molecules/Twist")]
 	public static void Twist()
 	{

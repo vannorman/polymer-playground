@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\Wedge.cs" />
      <Compile Include="Assets\Scripts\WedgeFarm.cs" />
      <Compile Include="Assets\Scripts\WedgeProtector.cs" />
+     <Compile Include="Assets\Squeezer.cs" />
      <Compile Include="Assets\Tube.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\IntegrationCommon.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshCombinerIntegration.cs" />
@@ -102,6 +103,7 @@
      <None Include="Assets\Unity Utilities\Shaders\Toony-LightedOutlineScroll.shader" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-OutlineOnly.shader" />
      <None Include="Assets\Unity Utilities\SaladLab\Json.Net.Unity3D\LICENSE.txt" />
+     <None Include="Assets\Textures Shaders Materials\FadeShader.shader" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-BasicOutline.shader" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-LightedOutlineTransparent.shader" />
      <None Include="Assets\Unity Utilities\Battlehub\MeshCombiner\MeshCombiner Documentation.txt" />

@@ -56,7 +56,7 @@ public class Folding : MonoBehaviour {
 //				return;
 //			}
 //			if (g.folding) {
-			float rotSpeed = 2;
+			float rotSpeed = 0.8f;
 			Quaternion targetRot = Quaternion.Euler (0, g.targetC, 0);
 			g.pivot.rotation = Quaternion.Slerp (g.pivot.rotation, targetRot, Time.deltaTime * rotSpeed);
 //			g.pivot.transform.rotation =  Quaternion.Slerp (g.pivot.transform.rotation, g.target.transform.rotation, Time.deltaTime * rotSpeed);
