@@ -50,7 +50,7 @@ public class EditorTools : Editor {
 		GameObject sel = Selection.activeGameObject;
 		GameObject dupe = (GameObject)Instantiate (sel);
 		dupe.transform.SetParent (sel.transform);
-		dupe.transform.localPosition = new Vector3 (-13, 769, 513);
+		dupe.transform.localPosition = new Vector3 (0, 650, 418);
 		dupe.transform.localRotation = Quaternion.Euler (-52, 0, Random.Range (0, 360));
 		dupe.transform.localScale = Vector3.one;
 		Selection.activeObject = dupe;

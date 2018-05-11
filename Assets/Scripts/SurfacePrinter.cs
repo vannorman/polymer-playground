@@ -18,6 +18,7 @@ public class SurfacePrinter : MonoBehaviour {
 	public float scale = 3f;
 	void InitPrintingSurface(){
 		printLocations = Utils2.HexGrid (size, scale);
+
 		for (int i = 0; i < printLocations.Length; i++) {
 			printLocations [i] = printerSurface.position + printLocations [i];
 			GameObject o = GameObject.CreatePrimitive (PrimitiveType.Cube);
@@ -119,7 +120,7 @@ public class SurfacePrinter : MonoBehaviour {
 	}
 
 	float MovePrinterXZ(Vector3 dest){
-		float moveSpeed = 3f;
+		float moveSpeed = 10f;
 		xArm.position = Vector3.MoveTowards (xArm.position, new Vector3 (dest.x, xArm.position.y, xArm.position.z), Time.deltaTime * moveSpeed);
 		zArm.position = Vector3.MoveTowards (zArm.position, new Vector3 (zArm.position.x, zArm.position.y, dest.z), Time.deltaTime * moveSpeed);
 		float d = Mathf.Abs (xArm.position.x - dest.x) + Mathf.Abs (zArm.position.z - dest.z);
@@ -148,7 +149,7 @@ public class SurfacePrinter : MonoBehaviour {
 	}
 
 	void SetMaterial(){
-		GameObject placedMaterial = (GameObject)Instantiate (materialOrder [materialIndex], printHead.transform.position, Quaternion.identity);
+		GameObject placedMaterial = (GameObject)Instantiate (materialOrder [materialIndex], printHead.transform.position + Vector3.up * 0.2f, Quaternion.identity);
 	}
 
 	void Finished(){
