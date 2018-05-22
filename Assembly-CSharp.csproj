@@ -44,10 +44,10 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+      <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+      <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -78,7 +78,6 @@
      <Compile Include="Assets\Scripts\Wedge.cs" />
      <Compile Include="Assets\Scripts\WedgeFarm.cs" />
      <Compile Include="Assets\Scripts\WedgeProtector.cs" />
-     <Compile Include="Assets\Squeezer.cs" />
      <Compile Include="Assets\Tube.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\IntegrationCommon.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshCombinerIntegration.cs" />
@@ -88,16 +87,74 @@
      <Compile Include="Assets\Unity Utilities\Battlehub\PivotEditor\Scripts\MeshUtils.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\PivotEditor\Scripts\Pivot.cs" />
      <Compile Include="Assets\Unity Utilities\Battlehub\PivotEditor\Scripts\PivotDesignTime.cs" />
-     <Compile Include="Assets\Unity Utilities\EditorTools.cs" />
-     <Compile Include="Assets\Unity Utilities\Fraction.cs" />
-     <Compile Include="Assets\Unity Utilities\MathUtils.cs" />
-     <Compile Include="Assets\Unity Utilities\MeshCombiner.cs" />
-     <Compile Include="Assets\Unity Utilities\MouseLook.cs" />
-     <Compile Include="Assets\Unity Utilities\SceneToolHacker.cs" />
-     <Compile Include="Assets\Unity Utilities\ScrollTexture.cs" />
-     <Compile Include="Assets\Unity Utilities\SinHover.cs" />
-     <Compile Include="Assets\Unity Utilities\TimedObjectDestructor.cs" />
-     <Compile Include="Assets\Unity Utilities\Utils.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\EditorTools.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\Fraction.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\CloudParticles.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ColorCycle.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\FadeColor.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\FlickerLightAnd.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\FlipRotateOverTime.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\FloatEffect.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\FollowSpline.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\GLTriangles.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\GrayscaleEffect.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\GrowObjectOverTime.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\HideMeshAtDistance.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\HideOnStart.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ImageEffectBase.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ImageEffects.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\LerpTowardsFixedRotation.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\LightningBolt.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\LightningBoltShuriken.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\MaintainExactFixedPositionToObject.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\MoveAlongAxis.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\MoveWaypoints.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\MovieController.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\MovingLaser.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ParticlesBasedOnSpeed.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ParticlesOnBounce.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\PartilcesWhileTimeZero.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\RandomFlickerObjects.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\RandomTwinkle.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\RestrictRotationY.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\Rotate.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ScaleUpAndStop.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ScrollTextureComplex.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\ShrinkToSize.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinColor.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SineLaser.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinGlowEmission.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinGrow.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinGrowXZ.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinHover.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinOscillate.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinProjector.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinPulsate.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinRotate.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SinTransparency.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SmoothFollow.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SplineController.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SplineControllerEditor.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SplineDrawTrianglesInside.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SplineHelper.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SplineHelperEditor.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SplineInterpolator.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\SwapMaterialAndOrMeshAtDistance.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\TempFX\ShrinkAndDisappear.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\TempFX\TimedObjectDestructorUnscaledTime.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\TriggerMessageBroadcaster.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\VortexEffect.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\WavePlane.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\FX\WingFlapManager.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\MathUtils.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\MeshCombiner.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\Perlin.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\RecordPosition.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\SceneToolHacker.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\ScrollTexture.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\TimedObjectDestructor.cs" />
+     <Compile Include="Assets\Unity Utilities\Scripts\Utils.cs" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-Basic.shader" />
      <None Include="Assets\Unity Utilities\SaladLab\Json.Net.Unity3D\link.xml" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-LightedOutlineScroll.shader" />
@@ -115,74 +172,74 @@
      <None Include="Assets\Unity Utilities\Shaders\Toony-Basic _OLD.shader" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-Lighted-Transparent.shader" />
      <None Include="Assets\Unity Utilities\Shaders\Toony-BasicOutline Alpha.shader" />
- <Reference Include="UnityEngine.UIAutomation">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UIAutomation">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/Editor/UnityEditor.UIAutomation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.TestRunner">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="nunit.framework">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Networking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/TestRunner/Editor/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Timeline">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Timeline">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/Timeline/Editor/UnityEditor.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.TreeEditor">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIAutomation">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UIAutomation">
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UIAutomation/Editor/UnityEditor.UIAutomation.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.GoogleAudioSpatializer">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/Editor/UnityEditor.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.HoloLens">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.SpatialTracking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/Editor/UnityEditor.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.VR">
- <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions">
- <HintPath>/Applications/Unity/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.WebGL.Extensions">
- <HintPath>/Applications/Unity/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
- <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ <HintPath>/Applications/Unity 2017.3/Unity 2017.3.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="Newtonsoft.Json">
  <HintPath>/Users/zannorman/Work/Foresight Institute/polymer playground/Assets/Unity Utilities/SaladLab/Json.Net.Unity3D/Plugins/Newtonsoft.Json.dll</HintPath>
