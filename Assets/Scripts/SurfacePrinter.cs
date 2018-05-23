@@ -137,7 +137,7 @@ public class SurfacePrinter : MonoBehaviour {
 
 	void OnCompletedSetMaterial(){
 		printLocationIndex++;
-		Debug.Log ("print loc ind:" + printLocationIndex+": "+printLocations[printLocationIndex] );
+//		Debug.Log ("print loc ind:" + printLocationIndex+": "+printLocations[printLocationIndex] );
 		if (printLocationIndex >= printLocations.Length) {
 			materialIndex++;
 			if (materialIndex >= materialOrder.Length) {

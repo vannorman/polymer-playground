@@ -24,7 +24,7 @@ public class FollowSpline : MonoBehaviour {
     float normalizedSpeedForDist = 1;
 
     public void SetSplinePretime(float preTime){
-        t = preTime;
+//        t = preTime;
     }
 
 
@@ -48,22 +48,23 @@ public class FollowSpline : MonoBehaviour {
 
 
     float origSpeed = 10f;
-	public float t = 0;
+//	public float t = 0;
     float adjustedTimer = 1;
-    
+	float lastPosT = 0;
     void Update()
     {
 
-
-        float curdist = spline.GetCurrentNodeDist(t);
+		lastPosT = spline.GetNextTimeStepKeepConstantSpeed (transform.position, lastPosT, speed);
+		transform.position = spline.GetPositionAtTime (lastPosT);
+		transform.rotation = spline.GetRotationAtTime (lastPosT);
+//        float curdist = spline.GetCurrentNodeDist(t);
 //        float normalizedTime = avgNodeDist / curdist;
 
-		t += Time.deltaTime * speed ;
+//		spline.GetPositionAtTime (1);
 
         
         
-		transform.position = spline.GetPositionAtTime(t);
-		transform.rotation = spline.GetRotationAtTime (t);
+//		transform.position = spline.GetPositionAtTime(t);
         
 	}
 }
