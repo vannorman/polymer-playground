@@ -14,6 +14,9 @@ public class ParticleCollider : MonoBehaviour
 	}
 
 	public void Update(){
+		if (Input.GetKeyDown (KeyCode.S)) {
+			TurnOnForSeconds ();
+		}
 //		if (Input.GetKeyDown (KeyCode.C)) {
 //			part.enableEmission = !part.enableEmission;
 //		}

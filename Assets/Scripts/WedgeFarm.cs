@@ -19,7 +19,7 @@ public class WedgeFarm : MonoBehaviour {
 			w.transform.localPosition = p;
 			w.transform.localRotation = Quaternion.Euler (0, -30, 120);
 			w.GetComponent<Wedge>().fixedPosition = true;
-			w.GetComponent<Wedge> ().SetMode (Wedge.AttachMode.ReadyToReceive);
+			w.GetComponent<Wedge> ().SetMode (Wedge.AttachMode.Protected);
 		}
 	}
 }

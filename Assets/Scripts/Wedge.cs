@@ -32,7 +32,7 @@ public class Wedge : MonoBehaviour {
 					if (w == this || w.mode != AttachMode.ReadyToReceive)
 						continue;
 					float d = (w.femaleAttach.position - maleAttach.position).sqrMagnitude;
-					if (d < 1) {
+					if (d < 1.7f) {
 						InitAttach (this, w);
 						return;
 					}

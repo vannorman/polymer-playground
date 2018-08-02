@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Project 4 - Dynamic Assembler.unity
+- path: Assets/Scenes/Project 5 - Twisted Battery.unity
   isLoaded: 1
   isActive: 1

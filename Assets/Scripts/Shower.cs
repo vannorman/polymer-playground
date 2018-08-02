@@ -17,9 +17,9 @@ public class Shower : MonoBehaviour {
 	public float interval = 0.3f;
 
 	void Update () {
-//		if (Input.GetKeyDown (KeyCode.S)) {
-//			showering = !showering;
-//		}
+		if (Input.GetKeyDown (KeyCode.D)) {
+			TurnOnForSeconds ();
+		}
 		if (showering) {
 			t -= Time.deltaTime;
 			if (t < 0) {
@@ -31,8 +31,8 @@ public class Shower : MonoBehaviour {
 					count--;
 					p = transform.position + Random.onUnitSphere;
 				}
-				if (Physics.CheckSphere (p,.1f))
-					return;
+//				if (Physics.CheckSphere (p,.1f))
+//					return;
 				w.transform.position = p;
 //				Vector3 bounds = new Vector3 (6, 0.5f, 0.5f);
 //				w.transform.position = transform.position + Random.onUnitSphere; // + transform.right * Random.Range (-bounds.x, bounds.x);

@@ -18,7 +18,6 @@ public class SurfacePrinter : MonoBehaviour {
 	public float scale = 3f;
 	void InitPrintingSurface(){
 		printLocations = Utils2.HexGrid (size, scale);
-
 		for (int i = 0; i < printLocations.Length; i++) {
 			printLocations [i] = printerSurface.position + printLocations [i];
 			GameObject o = GameObject.CreatePrimitive (PrimitiveType.Cube);
@@ -37,7 +36,8 @@ public class SurfacePrinter : MonoBehaviour {
 
 	enum State {
 		Ready,
-		Printing
+		Printing,
+		Finished
 	}
 	State state;
 
@@ -46,18 +46,23 @@ public class SurfacePrinter : MonoBehaviour {
 		MovingWithMaterial,
 		SettingMaterial,
 		Retracting,
-		Return
+		Return,
+
 	}
 	MotionState motionState;
 	void SetMotionState(MotionState newState){
 //		Debug.Log ("set motion state;" + newState);
 		motionState = newState;
 	}
+	void BeginPrinting(){
+		InitMaterialSource ();
+		state = State.Printing;
+		motionState = MotionState.Return;
+	}
 	float t = 0;
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.A)) {
-			state = State.Printing;
-			motionState = MotionState.Return;
+			BeginPrinting ();
 		}
 		if (Input.GetKey (KeyCode.Alpha1)) {
 			MovePrinterXZ (tests [0].position);
@@ -66,6 +71,9 @@ public class SurfacePrinter : MonoBehaviour {
 		}
 		switch (state) {
 		case State.Ready:
+			Debug.Log ("should be moving to mat origin.");
+			MovePrinterXZ (materialLocation.position);
+			MovePrinterY (materialLocation.position);
 			break;
 		case State.Printing:
 			switch (motionState) {
@@ -112,6 +120,7 @@ public class SurfacePrinter : MonoBehaviour {
 	public GameObject[] materialOrder;
 	int materialIndex=0;
 	GameObject carriedMaterial;
+
 	void GetCurrentMaterial(){
 		GameObject o = (GameObject)Instantiate (materialOrder [materialIndex]);
 		o.transform.position = printHead.position;
@@ -119,16 +128,16 @@ public class SurfacePrinter : MonoBehaviour {
 		carriedMaterial = o;
 	}
 
+	public float moveSpeed = 10f;
 	float MovePrinterXZ(Vector3 dest){
-		float moveSpeed = 10f;
 		xArm.position = Vector3.MoveTowards (xArm.position, new Vector3 (dest.x, xArm.position.y, xArm.position.z), Time.deltaTime * moveSpeed);
 		zArm.position = Vector3.MoveTowards (zArm.position, new Vector3 (zArm.position.x, zArm.position.y, dest.z), Time.deltaTime * moveSpeed);
 		float d = Mathf.Abs (xArm.position.x - dest.x) + Mathf.Abs (zArm.position.z - dest.z);
 		return d;
 	}
 
+	public float headMoveSpeed = 10f;
 	float MovePrinterY(Vector3 dest){
-		float headMoveSpeed = 3f;
 //		Debug.Log ("moving from:" + printHead.transform.position.y + " to " + dest.y);
 		printHead.transform.position = Vector3.MoveTowards (printHead.transform.position, new Vector3 (printHead.transform.position.x, dest.y, printHead.position.z), headMoveSpeed * Time.deltaTime);
 		float d = Mathf.Abs (printHead.position.y - dest.y);
@@ -140,6 +149,7 @@ public class SurfacePrinter : MonoBehaviour {
 //		Debug.Log ("print loc ind:" + printLocationIndex+": "+printLocations[printLocationIndex] );
 		if (printLocationIndex >= printLocations.Length) {
 			materialIndex++;
+			InitMaterialSource ();
 			if (materialIndex >= materialOrder.Length) {
 				Finished ();
 			}
@@ -148,11 +158,28 @@ public class SurfacePrinter : MonoBehaviour {
 
 	}
 
+	GameObject materialSourceObj;
+	void InitMaterialSource(){
+		if (materialSourceObj) {
+			Destroy (materialSourceObj);
+		}
+		if (materialIndex < materialOrder.Length) {
+			materialSourceObj = (GameObject)Instantiate (materialOrder [materialIndex], materialLocation.position, Quaternion.identity);
+		}
+	}
+
 	void SetMaterial(){
 		GameObject placedMaterial = (GameObject)Instantiate (materialOrder [materialIndex], printHead.transform.position + Vector3.up * 0.2f, Quaternion.identity);
+		if (carriedMaterial) {
+			Destroy (carriedMaterial);
+		}
 	}
 
 	void Finished(){
+//		motionState = MotionState.Return;
+		Debug.Log("Fin!");
 		state = State.Ready;
 	}
+
+
 }

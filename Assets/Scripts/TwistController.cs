@@ -11,7 +11,7 @@ public class TwistController : MonoBehaviour {
 	bool twisting = false;
 	bool reverse = false;
 	float twistAmount = 0f;
-	float speed = 0.33f;
+	public float speed = 0.20f;
 	float maxTwists = 15f;
 	float minTwists = 0.5f;
 	// Update is called once per frame

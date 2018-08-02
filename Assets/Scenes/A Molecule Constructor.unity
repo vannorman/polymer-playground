@@ -5520,6 +5520,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphere: {fileID: 1888763597903242, guid: a39d4d35764344e0fb8d4aa7c29a2996, type: 2}
+  molecule1: {fileID: 0}
+  mol3: {fileID: 0}
+  wedgePrefab: {fileID: 0}
+  nubPrefab: {fileID: 0}
+  atomPrefab: {fileID: 0}
+  atomWithPaddlePrefab: {fileID: 0}
 --- !u!4 &1035184525
 Transform:
   m_ObjectHideFlags: 0

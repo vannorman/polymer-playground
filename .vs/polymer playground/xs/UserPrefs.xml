@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{EF8F5E54-6DC1-3F41-C0A7-0F81BD9106F3}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Unity Utilities/Scripts/ItemPopup.cs">
+    <Files>
+      <File FileName="Assets/Unity Utilities/Scripts/FX/FollowSpline.cs" Line="41" Column="1" />
+      <File FileName="Assets/ParticleMover.cs" Line="44" Column="4" />
+      <File FileName="Assets/Scripts/Flashlight.cs" Line="10" Column="30" />
+      <File FileName="Assets/Scripts/Shower.cs" Line="29" Column="18" />
+      <File FileName="Assets/Scripts/ParticleCollider.cs" Line="18" Column="24" />
+      <File FileName="Assets/Scripts/WedgeFarm.cs" Line="22" Column="64" />
+      <File FileName="Assets/Scripts/Wedge.cs" Line="30" Column="13" />
+      <File FileName="Assets/Scripts/SurfacePrinter.cs" Line="140" Column="2" />
+      <File FileName="Assets/Unity Utilities/Scripts/FX/LightningBolt.cs" Line="24" Column="32" />
+      <File FileName="Assets/Unity Utilities/Scripts/FX/SimpleTypewriter.cs" Line="42" Column="36" />
+      <File FileName="Assets/Attributions.cs" Line="9" Column="7" />
+      <File FileName="Assets/ShowPopup.cs" Line="10" Column="58" />
+      <File FileName="Assets/InstanceSetter.cs" Line="12" Column="1" />
+      <File FileName="Assets/Unity Utilities/Scripts/ItemPopup.cs" Line="79" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

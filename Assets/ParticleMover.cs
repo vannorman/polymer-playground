@@ -37,8 +37,9 @@ public class ParticleMover : MonoBehaviour {
 	List<ParticleSystem.Particle> enteredParticles = new List<ParticleSystem.Particle>();
 	void Update(){
 		t -= Time.deltaTime;
-		if (Input.GetKeyDown (KeyCode.M)) {
+		if (Input.GetKeyDown (KeyCode.A)) {
 			moving = !moving;
+			FindObjectOfType<Flashlight> ().ToggleState (moving);
 			blockers.SetActive (!moving);
 		}
 		if (moving) {
