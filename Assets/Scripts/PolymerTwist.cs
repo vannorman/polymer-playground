@@ -9,6 +9,21 @@ public class PolymerTwist : MonoBehaviour {
 	List<GameObject> twisted = new List<GameObject>();
 	GameObject anchor;
 	GameObject anchor2;
+    public Transform reverseParent1;
+    public Transform reverseParent2;
+    public void Flip(){
+        if (spiralPiecesParent1.transform.parent == null ) {
+            spiralPiecesParent1.transform.SetParent(reverseParent1);
+            spiralPiecesParent2.transform.SetParent(reverseParent2);
+        } else {
+            spiralPiecesParent1.transform.SetParent(null);
+            spiralPiecesParent2.transform.SetParent(null);
+        }
+        spiralPiecesParent1.transform.localPosition = Vector3.zero;
+        spiralPiecesParent1.transform.localRotation = Quaternion.identity;
+        spiralPiecesParent2.transform.localPosition = Vector3.zero;
+        spiralPiecesParent2.transform.localRotation = Quaternion.identity;
+    }
 
 	public Slider twistAmt;
 	public Slider spiral;
@@ -22,67 +37,67 @@ public class PolymerTwist : MonoBehaviour {
 	}
 
 
-	public void Twist(){
-		foreach (GameObject o in twisted) {
-			DestroyImmediate (o);
-			Destroy (o);
+//	public void Twist(){
+//		foreach (GameObject o in twisted) {
+//			DestroyImmediate (o);
+//			Destroy (o);
 
-		}
-		twisted.Clear ();
-		Vector3[] vs = Utils2.SimpleSpiral ();
-		for(int i=0;i< vs.Length;i++){
-//			if (i == 0) {
-//				anchor = new GameObject ("anchor");
-//				anchor.transform.position = vs [0];
-//				Rigidbody rb = anchor.AddComponent<Rigidbody> ();
-//				rb.isKinematic = true;
-//			}
-//			if (i == vs.Length - 1) {
-//				anchor2 = new GameObject ("anchor2");
-//				anchor2.transform.position = vs [i];
-//				Rigidbody rb = anchor2.AddComponent<Rigidbody> ();
-//				rb.isKinematic = true;
-//			}
-			Vector3 v = vs [i];
-			GameObject t = (GameObject) GameObject.Instantiate (molToTwist);
-			t.transform.position = transform.position+	v;
-			if (i > 0) {
-				t.transform.up = -(vs [i] - vs [i - 1]);
-			}
-			twisted.Add (t);
-			t.transform.SetParent (this.transform);
-			Vector3 dir = Vector3.up;
-			if (i > 0)
-				dir = vs [i] - vs [i - 1];
-			else
-				dir = vs [i + 1] - vs [i];
-			t.transform.rotation = Quaternion.AngleAxis (0, dir);
-
-		}
-		for (int i=0;i<twisted.Count;i++){
-//			GameObject tw = twisted [i];
-//			Rigidbody rb = tw.AddComponent<Rigidbody> ();
-//
-//			rb.useGravity = false;
-//
-//			HingeJoint hj = tw.AddComponent<HingeJoint> ();
-//			if (i == 0) {
-//				hj.anchor = anchor.transform.position;
-//				hj.connectedBody = anchor.GetComponent<Rigidbody>();
-//			}
+//		}
+//		twisted.Clear ();
+//		Vector3[] vs = Utils2.SimpleSpiral ();
+//		for(int i=0;i< vs.Length;i++){
+////			if (i == 0) {
+////				anchor = new GameObject ("anchor");
+////				anchor.transform.position = vs [0];
+////				Rigidbody rb = anchor.AddComponent<Rigidbody> ();
+////				rb.isKinematic = true;
+////			}
+////			if (i == vs.Length - 1) {
+////				anchor2 = new GameObject ("anchor2");
+////				anchor2.transform.position = vs [i];
+////				Rigidbody rb = anchor2.AddComponent<Rigidbody> ();
+////				rb.isKinematic = true;
+////			}
+//			Vector3 v = vs [i];
+//			GameObject t = (GameObject) GameObject.Instantiate (molToTwist);
+//			t.transform.position = transform.position+	v;
 //			if (i > 0) {
-//				hj.connectedBody = twisted [i - 1].GetComponent<Rigidbody> ();
+//				t.transform.up = -(vs [i] - vs [i - 1]);
 //			}
-//			if (i == twisted.Count - 1) {
-//				hj.anchor = anchor2.transform.position;
-//				hj.connectedBody = anchor2.GetComponent<Rigidbody>();
-//			}
-//			hj.spring
-//				hj.anchor = twisted [i - 1].transform.position;
+//			twisted.Add (t);
+//			t.transform.SetParent (this.transform);
+//			Vector3 dir = Vector3.up;
+//			if (i > 0)
+//				dir = vs [i] - vs [i - 1];
+//			else
+//				dir = vs [i + 1] - vs [i];
+//			t.transform.rotation = Quaternion.AngleAxis (0, dir);
+
+//		}
+//		for (int i=0;i<twisted.Count;i++){
+////			GameObject tw = twisted [i];
+////			Rigidbody rb = tw.AddComponent<Rigidbody> ();
+////
+////			rb.useGravity = false;
+////
+////			HingeJoint hj = tw.AddComponent<HingeJoint> ();
+////			if (i == 0) {
+////				hj.anchor = anchor.transform.position;
+////				hj.connectedBody = anchor.GetComponent<Rigidbody>();
+////			}
+////			if (i > 0) {
+////				hj.connectedBody = twisted [i - 1].GetComponent<Rigidbody> ();
+////			}
+////			if (i == twisted.Count - 1) {
+////				hj.anchor = anchor2.transform.position;
+////				hj.connectedBody = anchor2.GetComponent<Rigidbody>();
+////			}
+////			hj.spring
+////				hj.anchor = twisted [i - 1].transform.position;
 					
 
-		}
-	}
+	//	}
+	//}
 
 	float t = 0;
 	float int1 = 1;
@@ -110,7 +125,7 @@ public class PolymerTwist : MonoBehaviour {
 		cachedPolymers.Add (poly1);
 		cachedPolymers.Add (poly2);
 		spiralPiecesParent2.transform.position += Vector3.right * leftOffset;
-		Debug.Log ("polymers init. cached len:" + cachedPolymers.Count + ", cahcned[0]:" + cachedPolymers [0].Count+", 1:"+cachedPolymers[1].Count);
+		//Debug.Log ("polymers init. cached len:" + cachedPolymers.Count + ", cahcned[0]:" + cachedPolymers [0].Count+", 1:"+cachedPolymers[1].Count);
 
 	}
 
@@ -125,7 +140,7 @@ public class PolymerTwist : MonoBehaviour {
 	public float radiusFactor = 1.01f;
 	public bool reverse = false;
 	public float reverseFactorP = 0.5f;
-	float maxTwists = 15;
+	float maxTwists = 10;
 	public float subTwistAmount = 30;
 	public float spacing = 1.667f;
 	int polymerLength = 300;
@@ -145,11 +160,11 @@ public class PolymerTwist : MonoBehaviour {
 		pts2 = Utils2.BendVectorArray(pts2,Vector3.right,arc,radiusFactor);
 
 
-		spiralPiecesParent1.transform.rotation = Quaternion.identity;
-		spiralPiecesParent1.transform.position = Vector3.zero;
+		//spiralPiecesParent1.transform.rotation = Quaternion.identity;
+		//spiralPiecesParent1.transform.position = Vector3.zero;
 
-		spiralPiecesParent2.transform.rotation = Quaternion.identity;
-		spiralPiecesParent2.transform.position = Vector3.zero;
+		//spiralPiecesParent2.transform.rotation = Quaternion.identity;
+		//spiralPiecesParent2.transform.position = Vector3.zero;
 //		spiralPiecesParent2 = new GameObject ();
 
 //		spiralPieces.Clear ();

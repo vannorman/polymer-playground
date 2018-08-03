@@ -5,17 +5,23 @@ using UnityEngine.UI;
 
 public class ItemPopup : MonoBehaviour {
 
-	// This is the popup gameobject which will be shown when you click on an item
+    // This is the popup gameobject which will be shown when you click on an item
 
-	// Notes:
-	// Screen space goes from 0 - width, 0 -height, 0,0 from bottom left
-	// canvas space goes from -width/2 to width/2, -height/2 to height/2, with bottom left being -w/2 , -h/2
-	// Convert from screen to canvas
-	//void Start(){
-	//	Initialize ();
-	//	Hide ();
-	//}
+    // Notes:
+    // Screen space goes from 0 - width, 0 -height, 0,0 from bottom left
+    // canvas space goes from -width/2 to width/2, -height/2 to height/2, with bottom left being -w/2 , -h/2
+    // Convert from screen to canvas
+    //void Start(){
+    //	Initialize ();
+    //	Hide ();
+    //}
 
+    public enum State { 
+        Shown,
+        FadingOut,
+        Hidden
+    }
+    public State state;
 
 	public static ItemPopup inst;
 	public void Initialize(){
@@ -29,8 +35,10 @@ public class ItemPopup : MonoBehaviour {
 	public RectTransform group;
 
 	public enum PopupType{
-		AllDirections,
-		AboveOnly
+		AboveRight,
+        AboveLeft,
+        BelowRight,
+        BelowLeft
 	}
 
 	public PopupType popupType;
@@ -46,9 +54,16 @@ public class ItemPopup : MonoBehaviour {
 	public Text infoText;
 	Vector2 anchoredPosition;
 	Vector2 offset = Vector2.zero; // Which direction (quadrant) will the popup be shown from the click?
-	public void Show(Vector3 p, string text){
+    public void SetState(State newState) {
+        state = newState;
+    }
+	public void Show(Vector3 p, string text, PopupType popType){
+        popupType = popType;
+        Utils2.SetAllMaterialsAndUI(transform, 1);
+        SetState(State.Shown);
 		timeout = 7f;
-		infoText.text = text;
+        infoText.GetComponent<SimpleTypewriter>().TypeText(text);
+		
 		this.gameObject.SetActive (true);
 		worldHitPos = p;
 		SetPopupPosition (); // make sure posiiton is set this frame.
@@ -59,12 +74,26 @@ public class ItemPopup : MonoBehaviour {
 	float timeout = 0f;
 	float offsetTimeout = 0f;
 	void Update() {
-		SetPopupPosition ();
-		timeout -= Time.deltaTime;
-		offsetTimeout -= Time.deltaTime;
-		if (timeout < 0) {
-			Hide ();
-		}
+        switch (state) { 
+            case State.Shown:
+                SetPopupPosition ();
+
+                timeout -= Time.deltaTime;
+                offsetTimeout -= Time.deltaTime;
+                if (timeout < 0)
+                {
+                    SetState(State.FadingOut);
+                }
+                break;
+            case State.FadingOut:
+                bool finished = Utils2.FadeAllMaterialsAndUI(transform, 0, 3);
+                if (finished) {
+                    SetState(State.Hidden);
+                }
+                break;
+            case State.Hidden:
+                break;
+            }
 	}
 
 	Vector2 anchoredPositionFromScreenPoint {
@@ -95,67 +124,39 @@ public class ItemPopup : MonoBehaviour {
 		fromBottomRight.gameObject.SetActive(false);
 
 		switch (popupType) {
-		case PopupType.AllDirections:
-			// Wrong values! Need to swap up/down/left/right
-//			if (mp.x > 0 && mp.y > 0) {
-//				// Top right
-//				fromTopRight.gameObject.SetActive (true);
-//				offset = new Vector2 (-ow, -oh);
-//			} else if (mp.x < 0 && mp.y > 0) {
-//				// top left
-//				fromTopLeft.gameObject.SetActive (true);
-//				offset = new Vector2 (ow, -oh);
-//			} else if (mp.x < 0 && mp.y < 0) {
-//				// bottom left
-//				fromBottomLeft.gameObject.SetActive (true);
-//				offset = new Vector2 (ow, oh);
-//			} else if (mp.x > 0 && mp.y < 0) {
-//				// bottom right
-//				fromBottomRight.gameObject.SetActive (true);
-//				offset = new Vector2 (-ow, oh);
-//			}
-			break;
-		case PopupType.AboveOnly:
-			if (mp.x > 0) {
-				fromTopLeft.gameObject.SetActive (true);
-				offset = new Vector2 (ow, oh);
-			} else if (mp.x < 0) {
-				fromTopRight.gameObject.SetActive (true);
-				offset = new Vector2 (-ow, oh);
-			}
+		
+            
+        case PopupType.AboveRight:
+            fromTopLeft.gameObject.SetActive (true);
+            offset = new Vector2 (ow, oh);
+            break;
+        case PopupType.AboveLeft:
+                
+			fromTopRight.gameObject.SetActive (true);
+			offset = new Vector2 (-ow, oh);
+            break;
 
-			break;
+        case PopupType.BelowRight:
+            fromBottomLeft.gameObject.SetActive(true);
+            offset = new Vector2(ow, -oh);
+            break;
+        case PopupType.BelowLeft:
+
+            fromBottomRight.gameObject.SetActive(true);
+            offset = new Vector2(-ow, -oh);
+            break;
 		}
 		group.anchoredPosition = offset; // + anchoredPositionFromScreenPoint;
-		// Based on which "quadrant" of the screen the user clicked, make sure offset puts the label towards the center of the screen.
-		// Assumes centered anchor.
-
-		// assumes bottom left anchor (same as for mousepos) and inverted coords (for input.mousepos)
-		//		if (mp.x > Screen.width / 2 && mp.y > Screen.height / 2) {
-		//			// Top right
-		//			fromTopRight.gameObject.SetActive(true);
-		//			offset = new Vector2(-ow,-oh);
-		//		} else if (mp.x < Screen.width / 2 && mp.y > Screen.height / 2) {
-		//			// top left
-		//			fromTopLeft.gameObject.SetActive(true);
-		//			offset = new Vector2(ow,-oh);
-		//		} else if (mp.x < Screen.width / 2 && mp.y < Screen.height / 2) {
-		//			// bottom left
-		//			fromBottomLeft.gameObject.SetActive(true);
-		//			offset = new Vector2(ow,oh);
-		//		} else if (mp.x > Screen.width / 2 && mp.y < Screen.height / 2) {
-		//			// bottom right
-		//			fromBottomRight.gameObject.SetActive(true);
-		//			offset = new Vector2(-ow,oh);
-		//		}
-
-		//		Debug.Log ("setting! screenpt:" + screenPoint);
+		
 
 	}
 
 
 	public void Hide(){
-		this.gameObject.SetActive (false);	
+        SetState(State.Hidden);
+        //Debug.Log("hide;" + this.name);
+		this.gameObject.SetActive (false);
+        infoText.GetComponent<SimpleTypewriter>().SetState(SimpleTypewriter.State.FadingOut);
 	}
 
 }

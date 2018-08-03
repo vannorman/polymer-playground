@@ -59,24 +59,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ActivateFlashlight.cs" />
+    <Compile Include="Assets\ActivateLock.cs" />
+    <Compile Include="Assets\ActivateTwistMotor.cs" />
     <Compile Include="Assets\Attributions.cs" />
-    <Compile Include="Assets\InstanceSetter.cs" />
-    <Compile Include="Assets\Paddle.cs" />
-    <Compile Include="Assets\ParticleMover.cs" />
+    <Compile Include="Assets\ChangeFollowSplineSpeed.cs" />
+    <Compile Include="Assets\LockingMolecule.cs" />
     <Compile Include="Assets\Scripts\Assembler.cs" />
     <Compile Include="Assets\Scripts\Atom.cs" />
+    <Compile Include="Assets\Scripts\EditorSpliner.cs" />
     <Compile Include="Assets\Scripts\EnableOnStartup.cs" />
     <Compile Include="Assets\Scripts\EnableOnStartupManager.cs" />
     <Compile Include="Assets\Scripts\Flashlight.cs" />
     <Compile Include="Assets\Scripts\Folding.cs" />
+    <Compile Include="Assets\Scripts\InstanceSetter.cs" />
+    <Compile Include="Assets\Scripts\ItemPopupObject.cs" />
     <Compile Include="Assets\Scripts\LightRotor.cs" />
     <Compile Include="Assets\Scripts\MaterialRef.cs" />
     <Compile Include="Assets\Scripts\Membrane.cs" />
+    <Compile Include="Assets\Scripts\MMTools.cs" />
     <Compile Include="Assets\Scripts\MoleculeClickDetector.cs" />
     <Compile Include="Assets\Scripts\MoleculeClicker.cs" />
     <Compile Include="Assets\Scripts\MoleculeConstructor.cs" />
     <Compile Include="Assets\Scripts\MoleculeLattice.cs" />
+    <Compile Include="Assets\Scripts\Paddle.cs" />
     <Compile Include="Assets\Scripts\ParticleCollider.cs" />
+    <Compile Include="Assets\Scripts\ParticleMover.cs" />
     <Compile Include="Assets\Scripts\PolymerPlayground.cs" />
     <Compile Include="Assets\Scripts\PolymerTwist.cs" />
     <Compile Include="Assets\Scripts\Prefabs.cs" />
@@ -85,10 +93,12 @@
     <Compile Include="Assets\Scripts\SinPop.cs" />
     <Compile Include="Assets\Scripts\SurfacePrinter.cs" />
     <Compile Include="Assets\Scripts\TwistController.cs" />
+    <Compile Include="Assets\Scripts\VideoRotate.cs" />
+    <Compile Include="Assets\Scripts\VideoSequenceObject.cs" />
+    <Compile Include="Assets\Scripts\VideoSequencer.cs" />
     <Compile Include="Assets\Scripts\Wedge.cs" />
     <Compile Include="Assets\Scripts\WedgeFarm.cs" />
     <Compile Include="Assets\Scripts\WedgeProtector.cs" />
-    <Compile Include="Assets\ShowPopup.cs" />
     <Compile Include="Assets\Tube.cs" />
     <Compile Include="Assets\Unity Utilities\Battlehub\Integration\IntegrationCommon.cs" />
     <Compile Include="Assets\Unity Utilities\Battlehub\Integration\MeshCombinerIntegration.cs" />

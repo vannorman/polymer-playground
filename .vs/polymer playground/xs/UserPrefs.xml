@@ -1,21 +1,22 @@
 ﻿<Properties StartupConfiguration="{EF8F5E54-6DC1-3F41-C0A7-0F81BD9106F3}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Unity Utilities/Scripts/ItemPopup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Unity Utilities/Scripts/Splines/SplineInterpolator.cs">
     <Files>
-      <File FileName="Assets/Unity Utilities/Scripts/FX/FollowSpline.cs" Line="41" Column="1" />
-      <File FileName="Assets/ParticleMover.cs" Line="44" Column="4" />
-      <File FileName="Assets/Scripts/Flashlight.cs" Line="10" Column="30" />
-      <File FileName="Assets/Scripts/Shower.cs" Line="29" Column="18" />
-      <File FileName="Assets/Scripts/ParticleCollider.cs" Line="18" Column="24" />
-      <File FileName="Assets/Scripts/WedgeFarm.cs" Line="22" Column="64" />
-      <File FileName="Assets/Scripts/Wedge.cs" Line="30" Column="13" />
-      <File FileName="Assets/Scripts/SurfacePrinter.cs" Line="140" Column="2" />
-      <File FileName="Assets/Unity Utilities/Scripts/FX/LightningBolt.cs" Line="24" Column="32" />
-      <File FileName="Assets/Unity Utilities/Scripts/FX/SimpleTypewriter.cs" Line="42" Column="36" />
-      <File FileName="Assets/Attributions.cs" Line="9" Column="7" />
-      <File FileName="Assets/ShowPopup.cs" Line="10" Column="58" />
-      <File FileName="Assets/InstanceSetter.cs" Line="12" Column="1" />
-      <File FileName="Assets/Unity Utilities/Scripts/ItemPopup.cs" Line="79" Column="5" />
+      <File FileName="Assets/ChangeFollowSplineSpeed.cs" Line="16" Column="1" />
+      <File FileName="Assets/Scripts/MMTools.cs" Line="59" Column="7" />
+      <File FileName="Assets/Unity Utilities/Scripts/FX/SimpleTypewriter.cs" Line="19" Column="1" />
+      <File FileName="Assets/Unity Utilities/Scripts/ItemPopup.cs" Line="146" Column="40" />
+      <File FileName="Assets/Scripts/ItemPopupObject.cs" Line="12" Column="28" />
+      <File FileName="Assets/Scripts/PolymerTwist.cs" Line="143" Column="22" />
+      <File FileName="Assets/Unity Utilities/Scripts/FX/FollowSpline.cs" Line="65" Column="55" />
+      <File FileName="Assets/ActivateLock.cs" Line="9" Column="24" />
+      <File FileName="Assets/LockingMolecule.cs" Line="29" Column="34" />
+      <File FileName="Assets/Scripts/VideoRotate.cs" Line="23" Column="42" />
+      <File FileName="Assets/Scripts/VideoSequencer.cs" Line="27" Column="29" />
+      <File FileName="Assets/Scripts/TwistController.cs" Line="57" Column="9" />
+      <File FileName="Assets/ActivateTwistMotor.cs" Line="18" Column="60" />
+      <File FileName="Assets/Unity Utilities/Scripts/Splines/SplineController.cs" Line="70" Column="22" />
+      <File FileName="Assets/Unity Utilities/Scripts/Splines/SplineInterpolator.cs" Line="274" Column="27" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -2,7 +2,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 public static class Utils2 {
+
+
+
+    public static bool FadeAllMaterialsAndUI(Transform parent, float alpha, float lerpSpeed = 1)
+    {
+        bool finished = true;
+        float finishedThreshhold = .01f;
+        float sp = Time.deltaTime * lerpSpeed;
+        foreach (Renderer r in parent.gameObject.GetComponentsInChildren<Renderer>())
+        {
+            Material[] mats = r.materials;
+            foreach (Material m in mats)
+            {
+                float newAlpha = Mathf.Lerp(m.color.a, alpha, sp);
+                m.color = new Color(m.color.r, m.color.g, m.color.b, newAlpha);
+                if (Mathf.Abs(alpha - newAlpha) > finishedThreshhold)
+                {
+                    finished = false;
+                }
+            }
+            r.materials = mats;
+        }
+
+        foreach (Text m in parent.gameObject.GetComponentsInChildren<Text>())
+        {
+            float newAlpha = Mathf.Lerp(m.color.a, alpha, sp);
+            m.color = new Color(m.color.r, m.color.g, m.color.b, newAlpha);
+            if (Mathf.Abs(alpha - newAlpha) > finishedThreshhold)
+            {
+                finished = false;
+            }
+        }
+
+        foreach (Image m in parent.gameObject.GetComponentsInChildren<Image>())
+        {
+            float newAlpha = Mathf.Lerp(m.color.a, alpha, sp);
+            m.color = new Color(m.color.r, m.color.g, m.color.b, newAlpha);
+            if (Mathf.Abs(alpha - newAlpha) > finishedThreshhold)
+            {
+                finished = false;
+            }
+        }
+
+        if (finished)
+        {
+            SetAllMaterialsAndUI(parent, alpha);
+        }
+
+        return finished;
+    }
+
+    public static void SetAllMaterialsAndUI(Transform parent, float newAlpha)
+    {
+        foreach (Renderer r in parent.gameObject.GetComponentsInChildren<Renderer>())
+        {
+            Material[] mats = r.materials;
+            foreach (Material m in mats)
+            {
+                m.color = new Color(m.color.r, m.color.g, m.color.b, newAlpha);
+
+            }
+            r.materials = mats;
+        }
+
+        foreach (Text m in parent.gameObject.GetComponentsInChildren<Text>())
+        {
+            m.color = new Color(m.color.r, m.color.g, m.color.b, newAlpha);
+        }
+
+        foreach (Image m in parent.gameObject.GetComponentsInChildren<Image>())
+        {
+            m.color = new Color(m.color.r, m.color.g, m.color.b, newAlpha);
+        }
+
+    }
+
 
 	public static Quaternion FlattenRotation(Quaternion rot){
 		rot.eulerAngles = new Vector3(0,rot.eulerAngles.y,0);
@@ -22,6 +99,24 @@ public static class Utils2 {
 			cp.y <= 1 &&
 			cp.z > 0;
 	}
+
+    public static  string InsertLineBreaks(string s, int chars){
+        
+        for (int i = 1; i < s.Length;i++){
+            if (i % (chars + 1) == 0){ // Reached chars length
+                for (int j = i; j > i - chars;j--){
+                    // Find previous space
+                    if (s[j] == ' '){
+                        s = s.Substring(0, j) + "\n" + s.Substring(j);
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        return s;
+    }
 
 	public static float HighestY(Transform tt){
 		// Takes the transformand all children and goes through each inddividual mesh's world bounds to figure out what is the highest worldspace point occupied by any child

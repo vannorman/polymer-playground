@@ -271,15 +271,15 @@ public class SplineInterpolator : MonoBehaviour
 
 
 	public float GetNextTimeStepKeepConstantSpeed(Vector3 startPos, float lastPosT, float speed){
-		
+        //Debug.Log("dt;" + Time.deltaTime);
 		float maxDistDelta = speed * Time.deltaTime;
 		Vector3 p1 = startPos;
 		Vector3 p2 = startPos;
-		int maxSteps = 50;
+		int maxSteps = 500;
 		float timeDelta = 0f;
 		float newPosT = lastPosT;
 		while ((p1 - p2).magnitude < maxDistDelta && maxSteps > 0) {
-			float splineStep = 0.001f; // increase for better performance but more coarseness
+			float splineStep = 0.0001f; // increase for better performance but more coarseness
 			newPosT += splineStep;
 			p2 = GetPositionAtTime (newPosT);
 			maxSteps--;
